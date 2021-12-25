@@ -1,12 +1,15 @@
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import { Text, View, Button } from 'react-native';
 import tw from "tailwind-rn"
 
+import {useNavigation} from "@react-navigation/core";
+
 const HomeScreen = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={tw("flex-1 justify-center items-center")}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <Button title="Click me" />
+            <Text>Home</Text>
+            <Button title="Go to Chat Screen" onPress={() => navigation.navigate('Chat')} />
         </View>
     );
 }
